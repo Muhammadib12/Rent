@@ -1,5 +1,4 @@
-
-import styles from "./../styles/Signup.module.css";
+import styles from "./../styles/SignUp.module.css";
 import { Link } from "react-router-dom";
 
 function Signup() {
