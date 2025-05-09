@@ -3,7 +3,7 @@ import styles from "./../styles/SideBar.module.css";
 import { Calculator, Home, Search, User, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { closeSidebar, toggleSidebar } from "../redux/slices/sidebarSlice";
+import { toggleSidebar } from "../redux/slices/sidebarSlice";
 function SideBar() {
   const dispatch = useDispatch();
   // const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
