@@ -71,7 +71,7 @@ function Calculator() {
       setOther2(remaining - Math.floor(remaining / 2));
     } else {
       const ratio1 = other1 / sumOthers;
-      const ratio2 = other2 / sumOthers;
+      // const ratio2 = other2 / sumOthers;
       const new1 = Math.round(remaining * ratio1);
       const new2 = 100 - val - new1;
       setOther1(new1);
