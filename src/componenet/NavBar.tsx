@@ -1,4 +1,4 @@
-import React from "react";
+
 import styles from "./../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
