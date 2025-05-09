@@ -1,5 +1,5 @@
 import { Download, Mail, OctagonAlert } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./../styles/Calculator.module.css";
 
 import downloadPDF from "./../utils/download.ts";
