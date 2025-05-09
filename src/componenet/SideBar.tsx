@@ -1,4 +1,4 @@
-import React from "react";
+
 import styles from "./../styles/SideBar.module.css";
 import { Calculator, Home, Search, User, X } from "lucide-react";
 import { Link } from "react-router-dom";
