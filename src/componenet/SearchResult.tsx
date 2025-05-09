@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import styles from "./../styles/SearchResult.module.css";
 import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import { useSelector } from "react-redux";
