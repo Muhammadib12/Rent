@@ -228,15 +228,14 @@ function Calculator() {
                   max={100}
                   value={fixed}
                   onChange={(e) =>
-                    handleSliderChange(
-                      Number(e.target.value),
-                      setFixed,
-                      fixed,
-                      prime,
-                      variable,
-                      setPrime,
-                      setVariable
-                    )
+                 handleSliderChange(
+  Number(e.target.value),
+  setPrime,
+  fixed,
+  variable,
+  setFixed,
+  setVariable
+);
                   }
                   style={{ "--fill": `${fixed}%` } as React.CSSProperties}
                 />
@@ -252,15 +251,14 @@ function Calculator() {
                   max={100}
                   value={variable}
                   onChange={(e) =>
-                    handleSliderChange(
-                      Number(e.target.value),
-                      setVariable,
-                      variable,
-                      prime,
-                      fixed,
-                      setPrime,
-                      setFixed
-                    )
+              handleSliderChange(
+  Number(e.target.value),
+  setVariable,
+  prime,
+  fixed,
+  setPrime,
+  setFixed
+);
                   }
                   style={{ "--fill": `${variable}%` } as React.CSSProperties}
                 />
