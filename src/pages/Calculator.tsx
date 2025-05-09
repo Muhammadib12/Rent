@@ -2,7 +2,7 @@ import { Download, Mail, OctagonAlert } from "lucide-react";
 import { useState } from "react";
 import styles from "./../styles/Calculator.module.css";
 
-import downloadPDF from "./../utils/download.ts";
+import downloadPDF from "./../utils/download";
 import calculateMortgage from "../utils/calculateMortgage";
 
 function Calculator() {
@@ -34,16 +34,6 @@ function Calculator() {
   const [fixed, setFixed] = useState(33);
   const [variable, setVariable] = useState(34);
 
-  // const result = calculateMortgage({
-  //   firstValue: Number(firstValue),
-  //   secValue: Number(secValue),
-  //   months: valueMonth,
-  //   annualRate: valueRe,
-  //   prime,
-  //   fixed,
-  //   variable,
-  // });
-
   const handleRangeChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     setter: React.Dispatch<React.SetStateAction<number>>
@@ -55,7 +45,6 @@ function Calculator() {
   const handleSliderChange = (
     newVal: number,
     setter: React.Dispatch<React.SetStateAction<number>>,
-    // current: number,
     other1: number,
     other2: number,
     setOther1: React.Dispatch<React.SetStateAction<number>>,
@@ -71,7 +60,6 @@ function Calculator() {
       setOther2(remaining - Math.floor(remaining / 2));
     } else {
       const ratio1 = other1 / sumOthers;
-      // const ratio2 = other2 / sumOthers;
       const new1 = Math.round(remaining * ratio1);
       const new2 = 100 - val - new1;
       setOther1(new1);
@@ -140,11 +128,7 @@ function Calculator() {
                   value={valueMonth}
                   onChange={(e) => handleRangeChange(e, setValueMonth)}
                   className={styles.slider}
-                  style={
-                    {
-                      "--fill": `${((valueMonth - 5) / 25) * 100}%`,
-                    } as React.CSSProperties
-                  }
+                  style={{ "--fill": `${((valueMonth - 5) / 25) * 100}%` } as React.CSSProperties }
                 />
                 <div className={styles.rangContent}>
                   <span>30</span>
@@ -165,11 +149,7 @@ function Calculator() {
                   value={valueRe}
                   onChange={(e) => handleRangeChange(e, setValueRe)}
                   className={styles.slider}
-                  style={
-                    {
-                      "--fill": `${((valueRe - 1) / 7) * 100}%`,
-                    } as React.CSSProperties
-                  }
+                  style={{ "--fill": `${((valueRe - 1) / 7) * 100}%` } as React.CSSProperties }
                 />
                 <div className={styles.rangContent}>
                   <span>8%</span>
@@ -207,14 +187,13 @@ function Calculator() {
                     handleSliderChange(
                       Number(e.target.value),
                       setPrime,
-                      prime,
                       fixed,
                       variable,
                       setFixed,
                       setVariable
                     )
                   }
-                  style={{ "--fill": `${prime}%` } as React.CSSProperties}
+                  style={{ "--fill": `${prime}%` } as React.CSSProperties }
                 />
               </div>
               <div className={styles.Range}>
@@ -222,24 +201,23 @@ function Calculator() {
                   <span>קבועה צמודה</span>
                   <span>{fixed}%</span>
                 </div>
-               <input
-  type="range"
-  min={0}
-  max={100}
-  value={fixed}
-  onChange={(e) =>
-    handleSliderChange(
-      Number(e.target.value),
-      setFixed,
-      prime,
-      variable,
-      setPrime,
-      setVariable
-    )
-  }
-  style={{ "--fill": `${fixed}%` } as React.CSSProperties}
-/>
-
+                <input
+                  type="range"
+                  min={0}
+                  max={100}
+                  value={fixed}
+                  onChange={(e) =>
+                    handleSliderChange(
+                      Number(e.target.value),
+                      setFixed,
+                      prime,
+                      variable,
+                      setPrime,
+                      setVariable
+                    )
+                  }
+                  style={{ "--fill": `${fixed}%` } as React.CSSProperties }
+                />
               </div>
               <div className={styles.Range}>
                 <div className={styles.RangeContent}>
@@ -252,16 +230,16 @@ function Calculator() {
                   max={100}
                   value={variable}
                   onChange={(e) =>
-              handleSliderChange(
-  Number(e.target.value),
-  setVariable,
-  prime,
-  fixed,
-  setPrime,
-  setFixed
-);
+                    handleSliderChange(
+                      Number(e.target.value),
+                      setVariable,
+                      prime,
+                      fixed,
+                      setPrime,
+                      setFixed
+                    )
                   }
-                  style={{ "--fill": `${variable}%` } as React.CSSProperties}
+                  style={{ "--fill": `${variable}%` } as React.CSSProperties }
                 />
               </div>
             </div>
@@ -278,13 +256,13 @@ function Calculator() {
                   fixed,
                   variable,
                 });
-
                 setResult(result1);
               }}
             >
               חשב משכנתא
             </button>
           </div>
+
 
           <div className={styles.calcResult}>
             <h2>תוצאות המשכנתא</h2>
