@@ -222,23 +222,24 @@ function Calculator() {
                   <span>קבועה צמודה</span>
                   <span>{fixed}%</span>
                 </div>
-                <input
-                  type="range"
-                  min={0}
-                  max={100}
-                  value={fixed}
-                  onChange={(e) =>
-                 handleSliderChange(
-  Number(e.target.value),
-  setPrime,
-  fixed,
-  variable,
-  setFixed,
-  setVariable
-);
-                  }
-                  style={{ "--fill": `${fixed}%` } as React.CSSProperties}
-                />
+               <input
+  type="range"
+  min={0}
+  max={100}
+  value={fixed}
+  onChange={(e) =>
+    handleSliderChange(
+      Number(e.target.value),
+      setFixed,
+      prime,
+      variable,
+      setPrime,
+      setVariable
+    )
+  }
+  style={{ "--fill": `${fixed}%` } as React.CSSProperties}
+/>
+
               </div>
               <div className={styles.Range}>
                 <div className={styles.RangeContent}>
