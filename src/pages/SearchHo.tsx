@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { ChevronDown, Search } from "lucide-react";
 import styles from "./../styles/SearchHo.module.css";
 import SearchResult from "../componenet/SearchResult";
