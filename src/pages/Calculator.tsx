@@ -55,7 +55,7 @@ function Calculator() {
   const handleSliderChange = (
     newVal: number,
     setter: React.Dispatch<React.SetStateAction<number>>,
-    current: number,
+    // current: number,
     other1: number,
     other2: number,
     setOther1: React.Dispatch<React.SetStateAction<number>>,
