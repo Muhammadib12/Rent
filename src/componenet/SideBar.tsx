@@ -6,11 +6,11 @@ import { useDispatch } from "react-redux";
 import { closeSidebar, toggleSidebar } from "../redux/slices/sidebarSlice";
 function SideBar() {
   const dispatch = useDispatch();
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target === e.currentTarget) {
-      dispatch(closeSidebar());
-    }
-  };
+  // const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   if (e.target === e.currentTarget) {
+  //     dispatch(closeSidebar());
+  //   }
+  // };
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebarHeader}>
